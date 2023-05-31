@@ -1,0 +1,36 @@
+--Create a clothing store database
+
+CREATE TABLE tris_tees (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, aisle INTEGER, color TEXT, price INTEGER);
+
+INSERT INTO tris_tees VALUES (1, "A", 5, 7, "red", 10);
+INSERT INTO tris_tees VALUES (2, "B", 5, 10, "orange", 12);
+INSERT INTO tris_tees VALUES (3, "C", 10, 2, "yellow", 14);
+INSERT INTO tris_tees VALUES (4, "D", 10, 1, "green", 10);
+INSERT INTO tris_tees VALUES (5, "E", 7, 3, "blue", 12);
+INSERT INTO tris_tees VALUES (6, "F", 7, 5, "indigo", 14);
+INSERT INTO tris_tees VALUES (7, "G", 5, 8, "peach", 10);
+INSERT INTO tris_tees VALUES (8, "H", 5, 4, "lilac", 12);
+INSERT INTO tris_tees VALUES (9, "I", 10, 6, "sage", 14);
+INSERT INTO tris_tees VALUES (10, "J", 10, 7, "maroon", 10);
+INSERT INTO tris_tees VALUES (11, "K", 7, 9, "pearl", 12);
+INSERT INTO tris_tees VALUES (12, "L", 7, 7, "pink", 14);
+INSERT INTO tris_tees VALUES (13, "M", 5, 10, "brown", 10);
+INSERT INTO tris_tees VALUES (14, "N", 5, 2, "magenta", 12);
+INSERT INTO tris_tees VALUES (15, "T", 15, 1, "teal", 14);
+
+--display the database ordered by price. 
+SELECT * FROM tris_tees WHERE price > 12 ORDER BY price;
+
+SELECT SUM(quantity) from tris_tees;
+
+FIX LATER
+--what is the avg price of items in the bulk section? 
+SELECT AVG(price) "avg bulk item price"
+FROM store
+where section='bulk'; 
+
+--what are the most 5 popular items? 
+SELECT item, price, popularity
+FROM store
+order by popularity desc
+limit 5; 
